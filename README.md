@@ -16,7 +16,7 @@ To Do is a personal project web development using Flask as the main tool. It is 
   - NoSQL: Firebase
 
 
-> The project is running in Google appspot using de Firebase noSQL database.
+> The project is running in Google appspot using the noSQL database Firebase.
 
 
 
