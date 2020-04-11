@@ -1,0 +1,31 @@
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/note.png') }}"
+                     style="max-width: 48px"
+                     alt="Note logo">
+                     href="https://todo-flask-xavier.appspot.com"
+            </a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('hello') }}">Inicio</a></li>
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('auth.logout') }}">Cierra sesion</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('auth.sign_up') }}" target="_blank">Crea una cuenta</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

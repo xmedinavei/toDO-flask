@@ -1,0 +1,34 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{ super() }}
+
+    <title>
+        {% block title %}Flask Note |{% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-success alert-dismissible">
+                <button type="button"
+                        data-dismiss="alert"
+                        class="close">&times;</button>
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <!-- Heredando los scripts de bootstrap para poder cerrar la alerta. -->
+    {% block scripts %}
+        {{ super() }}
+    {% endblock %}
+{% endblock %}
